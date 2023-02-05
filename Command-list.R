@@ -105,3 +105,21 @@ strptime(datestring, "%B %d, %y %H:%M")   #Function to acquire the time from dif
 
 as.POSIXct("date", tz = "EST")  #To manipulate time zone data. tz = time zone.
 
+x != y          #Logical operator that tests if two values are not equal.
+
+&               #"And" operator. If one is FALSE, everything is FALSE.
+  
+&&              #"And-and" operator, it evaluates only the corresponding values 1v1.
+  
+                #Or operators | and || work the same way. If one is TRUE, everything is TRUE.
+  
+                #"And" operators are evaluated before "or" operators.
+  
+xor(argument1,argument2)  #"Exclusive or", if you have 1 TRUE argument, it returns TRUE.
+                          #If you have 2 FALSE or 2 TRUE, it returns FALSE.
+
+which()         #Indicates which values are TRUE in the variable.
+
+any()           #Returns a TRUE if there is any TRUE in the variable.
+
+all()           #Returns TRUE if all elements are TRUE.
