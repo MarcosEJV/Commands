@@ -123,3 +123,8 @@ which()         #Indicates which values are TRUE in the variable.
 any()           #Returns a TRUE if there is any TRUE in the variable.
 
 all()           #Returns TRUE if all elements are TRUE.
+
+%%              #Remainer of a divison.
+  
+function(...)   #The 3 dots are call ellipsis and it means "indefinite number of arguments".
+  
