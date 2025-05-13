@@ -36,6 +36,8 @@ tail()    #Shows the last row of a table.
 
 Summary()   #Shows a summary of a table.
 
+dim()       #To look at the structure of a dataframe. The output is the number of rows and columns.
+
 If(argument){ event 1,    #Conditional for order execution.
   event 2}
 else { event 3,   #Not needed for "If" conditional.
@@ -53,6 +55,8 @@ tail("table")   #Print last line.
 nrow("table")   #Cound number of rows.
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
+
+table("dataframe"$Column)   #To know how many times each value actually occurs.
 
 write.table("table","table.txt",quote = FALSE, sep = "\t")  #Saves a table as text file
 #the quote eliminates quotation marks.
@@ -98,6 +102,8 @@ months()        #Function for month name.
 
 quarters()      #Function for quarted number i.e. "Q1"
 
+system.time()   #Computes the time needed to execute and expression (in seconds). Returns a proc_time class object. user time: Time charged to the CPU. elapsed time: 'wall clock' time.
+
 Sys.time()      #System time.
 
 strptime(datestring, "%B %d, %y %H:%M")   #Function to acquire the time from different format.
@@ -115,6 +121,8 @@ x != y          #Logical operator that tests if two values are not equal.
   
                 #"And" operators are evaluated before "or" operators.
   
+argument1 %in% argument2  #Logical binary operator that will look for the information from argument 1 inside argument 2.
+
 xor(argument1,argument2)  #"Exclusive or", if you have 1 TRUE argument, it returns TRUE.
                           #If you have 2 FALSE or 2 TRUE, it returns FALSE.
 
@@ -128,3 +136,59 @@ all()           #Returns TRUE if all elements are TRUE.
   
 function(...)   #The 3 dots are call ellipsis and it means "indefinite number of arguments".
   
+lapply(x,function,(...))        #Loop over a list and evaluate a function on each element.
+
+sapply()        #lapply() with a more simple output.
+
+apply(x,margin,function,...)         #Apply a function over the margins of an array. The margin is an integer vector which margins should be retained. i.e. apply(x,1,sum) <- rowSums(x)
+
+tapply(x, index, function,..., SIMPLIFY = TRUE)        #Apply a function over subsets of a vector. x is a vector. index is a factor or a list of factors.
+
+mapply(function,...,MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)        #Multivariate version of lapply().
+
+split(x,f, drop = FALSE,...)          #Takes a vector or other objects and splits it into groups determined by a factor or list of factors. x is a vector, list or dataframe. f is a factor. frop says if empty factors
+                                      #should be dropped.
+
+       ----------------- Statistics -------------------
+
+rnorm()         #Random numbers given a mean and STdev. r from random.
+
+dnorm()         #Normal probability (given mean and STdev) at a point (or vector of points). d from density.
+
+pnorm()         #Cumulative distribution function for a Normal distribution. p from probability.
+
+rpois()         #Random Poisson variates with a given rate.
+
+qnorm()         #Quantile function. q from quantile.
+
+set.seed()      #Random number seed. This function allows reproducibility when generating numbers.
+
+sample()        #Draw random samples from objects. if replace = TRUE -> the picked valued can be repeated.
+
+       ----------------- For plotting (basic) ------------------
+
+plot(x, y, "type", main = "title", xlab = "x-axis", ylab = "y-axis", pch = number)            #type -> white dots are default, "l" is a line chart. pch = 16 for black circles. For more, look into ?plot.
+
+hist()          #Generates and histogram from a vector.
+
+boxplot()       #Bloxplot from a dataframe.
+       
+       ----------------- For debugging ---------------------
+
+traceback()     #Prints out the function call stack after an error.
+
+debug()         #Enters "debug" mode, step trhough execution one line at a time.
+
+browser()       #Suspend execution of a function wherever it is called.
+
+trace()         #Insert debugging code without modifying the function.
+
+recover()       #Modify the error behavior so tou can get the function call stack.
+
+str()           #Internal structure of an R object. Simillar to summary().
+
+Rprof()         #Starts the Profiler in R.
+
+SummaryRprof()  #Makes Rprof() readable. Keeps track of the function call stack and tabulates how much time is spend on each function. NEVER USE Rprof() and system.time() together.
+
+object.size()   #Splace in memory of an object.
