@@ -32,8 +32,6 @@ head(dataframe)   #Shows the title of the dataframe table.
 Dataframe[Dataframe$Column|Condition]   #Gives you the specific data of a column- 
                                         #that complies with specific conditions.
 
-tail()    #Shows the last row of a table.
-
 Summary()   #Shows a summary of a table.
 
 dim()       #To look at the structure of a dataframe. The output is the number of rows and columns.
@@ -50,8 +48,8 @@ for("changes"in"values") { action/consequence   #Cycles.
 variable <- read.table()  #Builds dataframes from table files.
 
 names("table")  #Print first column.
-head("table")   #Print first line.
-tail("table")   #Print last line.
+head("table")   #Print first row.
+tail("table")   #Print last row.
 nrow("table")   #Cound number of rows.
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
@@ -148,6 +146,15 @@ mapply(function,...,MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)        #
 
 split(x,f, drop = FALSE,...)          #Takes a vector or other objects and splits it into groups determined by a factor or list of factors. x is a vector, list or dataframe. f is a factor. frop says if empty factors
                                       #should be dropped.
+       
+date()          #It prints the date of the system.
+
+file.exists("x")            #It verifies the presence of a file in the working directory.
+
+dir.create("x")             #Creates a directory in the current working directory.
+
+download.file(websiteinvariable, destfile = "directoryofdestination/filename.extension", method = "curl")            #For downloading files from the internet, 
+                                                                                                                     #the method argument is needed when downloading form https on a Mac
 
        ----------------- Statistics -------------------
 
