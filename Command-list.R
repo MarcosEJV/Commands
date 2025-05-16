@@ -45,12 +45,14 @@ else { event 3,   #Not needed for "If" conditional.
 for("changes"in"values") { action/consequence   #Cycles.
 }
 
-variable <- read.table()  #Builds dataframes from table files.
+variable <- read.table()  #Builds dataframes from table files. Arguments: sep = "," (for csv); header = TRUE (to indicate titles); skip (skips lines before read); nrows (how many rows to read).
+read.csv()      #To read csv directly.
+read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet should be imported); header + TRUE (column titles); colIndex / rowIndex (to read specific columns or rows. Requires Library xlsx.
 
 names("table")  #Print first column.
 head("table")   #Print first row.
 tail("table")   #Print last row.
-nrow("table")   #Cound number of rows.
+nrow("table")   #Count number of rows.
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
 
@@ -59,8 +61,24 @@ table("dataframe"$Column)   #To know how many times each value actually occurs.
 write.table("table","table.txt",quote = FALSE, sep = "\t")  #Saves a table as text file
 #the quote eliminates quotation marks.
 #sep argument indicates separation using tabulation.
+write.xlsx()    #Write an Excel. Requires Library xlsx.
 
-#Next commands use plyr package.
+                  ------------XML files---------------
+
+xmlTreeParse(x,useInternal=TRUE)            #To extract XML files. Requires the XML Library.
+xmlRoot(x)      #To get the root of the XML file.
+xmlName(x)      #Name of the XML name.
+x[[integer]]    #To extract items of the XML file.
+xmlSApply(x,xmlValue)            #Loops through all the x XML file and get the xmlValue value.
+XpathSApply(x,"//name",xmlValue) #XPath is a languange used for XML files to get more information. Is a different language. This extracts the "name" of all the components in the XML file.
+
+                 --------------JSON files----------------
+fromJSON("website")              #Extract the JSON data. The wesite can be changed by a variable or a text file.
+name(x$owner)   #Look for the title of the "owner" column inside the JSON file.
+toJSON(x,pretty=SURE)            #To convert a dataframe into JSON. pretty makes easier to read the file.
+cat(x)          #To print the JSON file.
+
+                 ------------dplyr Package---------------
 
 ddply(.data = table,        #It gives you the means of column 2 using column 1 as a filter.
       .variables = 'column',
@@ -83,7 +101,7 @@ mutate()        #Add new columns to a dataframe.
 
 count()         #Counts data.
 
-#End of plyr package known commands.
+                ------------------------------------------
 
 search()        #Shows the search list R is using to assing values to variables and functions.
 
