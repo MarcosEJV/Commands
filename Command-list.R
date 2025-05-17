@@ -101,7 +101,21 @@ mutate()        #Add new columns to a dataframe.
 
 count()         #Counts data.
 
-                ------------------------------------------
+                -----------------data.table Package----------------
+
+table()         #It gives you all the information of the tables in the environment.
+
+x[]             #Subsetting tables.
+
+x[,function()]  #Perform function to specific columns and variables in the table.
+
+x[,title:"new information"]   #Adding columns to an existing table. You can use formulas using other columns. You can also use logic tests.
+
+x[, .N, by=y]   #.N is a special variable that counts the number of times a value or variable appears in a table.
+
+fread(file)     #Fast reading tables. Much faster than read.table().
+
+                ---------------------------------------------------
 
 search()        #Shows the search list R is using to assing values to variables and functions.
 
