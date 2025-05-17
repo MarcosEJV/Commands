@@ -15,3 +15,5 @@ Library(XLConnect)  #For Excel files but with more options.
 Library(XML)     #To work with XML files.
 
 Library(jsonlite)  #For JSON files.
+
+Library(data.table)  #Strong package to work with data frames.
