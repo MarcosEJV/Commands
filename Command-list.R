@@ -97,6 +97,8 @@ group_by()      #Turns a dataframe intro groups depending on specific conditions
 
 is.na()         #Filters NA values.
 
+na.omit()       #Erase NA rows.
+
 mutate()        #Add new columns to a dataframe.
 
 count()         #Counts data.
