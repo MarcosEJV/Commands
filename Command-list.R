@@ -47,7 +47,8 @@ for("changes"in"values") { action/consequence   #Cycles.
 
 variable <- read.table()  #Builds dataframes from table files. Arguments: sep = "," (for csv); header = TRUE (to indicate titles); skip (skips lines before read); nrows (how many rows to read).
 read.csv()      #To read csv directly.
-read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet should be imported); header + TRUE (column titles); colIndex / rowIndex (to read specific columns or rows. Requires Library xlsx.
+read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet should be imported); header = TRUE (column titles); colIndex / rowIndex (to read specific columns or rows. Requires Library xlsx.
+read.xlsx()     #From library readxl, same as the previous one but you can use range = "firstcell:lastcell" to subset a range of cells (i.e. A3:C4).
 
 names("table")  #Print first column.
 head("table")   #Print first row.
