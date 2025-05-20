@@ -19,3 +19,7 @@ library(XML)     #To work with XML files.
 library(jsonlite)  #For JSON files.
 
 library(data.table)  #Strong package to work with data frames.
+
+library(RMySQP)  #For MySQP files.
+
+bioClite("rhdf5")  #For HDF5 files. It requires BioConductor.
