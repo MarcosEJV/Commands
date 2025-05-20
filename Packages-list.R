@@ -22,4 +22,4 @@ library(data.table)  #Strong package to work with data frames.
 
 library(RMySQP)  #For MySQP files.
 
-bioClite("rhdf5")  #For HDF5 files. It requires BioConductor.
+BiocManager::install("rhdf5")  #For HDF5 files. It requires BioConductor.
