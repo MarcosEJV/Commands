@@ -1,19 +1,21 @@
 #List of packages.
 
-Library(plyr)   #Data manipulation.
+library(plyr)   #Data manipulation.
 
-Library(dplyr)  #Same as plyr but it allows pipeline use. %>%
+library(dplyr)  #Same as plyr but it allows pipeline use. %>%
 
-Library(ggplot2)    #For figure generation.
+library(ggplot2)    #For figure generation.
 
-Library(Markdown)   #For Markdowns.
+library(Markdown)   #For Markdowns.
 
-Library(xlsx)    #To work with Excel files (basic).
+library(xlsx)    #To work with Excel files (basic). It gave me many issues and I look for the next one.
 
-Library(XLConnect)  #For Excel files but with more options.
+library(readxl)  #To work with Excel files.
 
-Library(XML)     #To work with XML files.
+library(XLConnect)  #For Excel files but with more options.
 
-Library(jsonlite)  #For JSON files.
+library(XML)     #To work with XML files.
 
-Library(data.table)  #Strong package to work with data frames.
+library(jsonlite)  #For JSON files.
+
+library(data.table)  #Strong package to work with data frames.
