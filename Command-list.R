@@ -93,6 +93,30 @@ h5ls("file.h5")  #Similar to ls, but for HDF5 files.
 h5write(x, "file.h5", "group/object")             #To insert data in the HDF5 file.
 h5read("file.h5", "group/object")                 #To read the file.
 
+                 ---------Reading from WEB (httr)--------
+
+con = url("website")        #To read a website. It opens a connection.
+htmlcode = readlines(con)   #To read the htlm content in the website.
+close(con)                  #As in XML, this closes the connection to the website.
+
+#Using the httr Package:
+
+GET(url)         #Gets the website connection.
+content(GETinfo, as = "text")           #Gets the website content.
+htmlParse(contentinfo, asText = TRUE)   #Gets the html code.
+GET(url, authenticate("user","password"))         #To get into a password login website. The output should be "Status 200" as a positive answer.
+handle(url)      #To mark an website as "favorite" for future use.
+
+                 ----------Data from APIs (httr)---------
+
+#This is to get information from facebook, google, twitter, github, etc.
+
+x = oauth_app("name app", key = "Consumer key from website", secret = "Consumer secret from website")  #To connect to the website.
+y = sign.oauth1.0(x, token = "your token", token_secret = "token secret")  #To login.
+homeTL = GET("url", sig)    #To access and download.
+content(homeTL)  #It downloads the JSON file.
+jsonlite::fromJSON(toJSON(jsonfile))    #It calls the jsonlite library and calls the function to get the dataframe form the json file.
+
                  ------------dplyr Package---------------
 
 ddply(.data = table,        #It gives you the means of column 2 using column 1 as a filter.
