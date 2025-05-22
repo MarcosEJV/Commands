@@ -25,3 +25,15 @@ library(RMySQP)  #For MySQP files.
 library(BiocManager)  #For Bioconductor installation.
 
 library(rhdf5)  #For HDF5 files. It requires BioConductor.
+
+library(foreing)      #For MiniTab, S, SAS, SPSS, Stata, Systat.
+
+library(RODBC)  #For PostgreQL, MySQL, Microsoft Access.
+
+library(jpeg, readbitmap, png, EBIimage)  #For images. EBIimage requires BioConductor.
+
+library(rdgal, rgeos, raster)  #For GIS data.
+
+library(tuneR, seewave)  #For MP3 (sound/music) files.
+
+library(sqldf)  #Run SQL statements on R dataframes.
