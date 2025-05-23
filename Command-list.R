@@ -25,7 +25,7 @@ head(dataframe)   #Shows the title of the dataframe table.
 Dataframe[Dataframe$Column|Condition]   #Gives you the specific data of a column- 
                                         #that complies with specific conditions.
 
-Summary()   #Shows a summary of a table.
+summary()   #Shows a summary of a table.
 dim()       #To look at the structure of a dataframe. The output is the number of rows and columns.
 
 If(argument){ event 1,    #Conditional for order execution.
@@ -43,9 +43,10 @@ read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet s
 read.xlsx()     #From library readxl, same as the previous one but you can use range = "firstcell:lastcell" to subset a range of cells (i.e. A3:C4).
 
 names("table")  #Print first column.
-head("table")   #Print first row.
-tail("table")   #Print last row.
+head("table")   #Print first row. 6 rows is the standard.
+tail("table")   #Print last row. 6 rows is the standard.
 nrow("table")   #Count number of rows.
+str("table")           #Internal structure of an R object. Simillar to summary().
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
 table("dataframe"$Column)   #To know how many times each value actually occurs.
