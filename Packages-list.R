@@ -37,3 +37,5 @@ library(rdgal, rgeos, raster)  #For GIS data.
 library(tuneR, seewave)  #For MP3 (sound/music) files.
 
 library(sqldf)  #Run SQL statements on R dataframes.
+
+library(reshape2)     #For data frame manipulation.
