@@ -8,6 +8,7 @@ data.frame( column1 = c(x,y,z),    #Generates a dataframe
             column3 = c(1,2,3)
             row.names = c(a,b,c)   #This adds names to each row in an extra column.
 )
+tbl_df(x)       #Converts a dataframe in a table-dataframe. Which is more organized and better for data manipulation.
 
 matrix(c(1:10),    #Generates a matrix
        nrow = 2,
@@ -66,6 +67,7 @@ x[x$"column" %in% "data"]   #Subsetting based on selection.
 xtabs(column1 ~ column2 + column3, data = x)                #Cross tabs the data to gove you a cress reference for data analysis (see notebook).
 ftable(x)       #Summarizes cross tabs for easy analysis.
 object.size(x)  #To know the size of the data.
+merge(x,y,by.x="column",by.y="column",all=TRUE)             #Merges the data frames x and y, using the shared column as a reference.
 
 write.table("table","table.txt",quote = FALSE, sep = "\t")  #Saves a table as text file
 #the quote eliminates quotation marks.
@@ -167,7 +169,11 @@ x$integer       #To add a new column to a data frame.
 cbind(x, data)  #Binds new columns to the right of the data frame.
 rbind(x, data)  #Binds new rows to the data frame, you can choose to add them at the top or bottom by using arguments.
 Hmisc::mutate(x, "newcolumn" 0 cut2 (column, g = y))            #Create a new variable and add it to the dataset. It needs Package Hmisc.
-rename(dataframe, ...)           #Changes the name of a column.
+rename(dataframe, ...)      #Changes the name of a column.
+arrange(join(x,y),column)   #Data frames merge using a column as a reference. The arrange command organize the final data frame.
+
+dataList = list(x,y,z)      #Creates a list of data frames and assigns it to a variable.
+join_all(dataList)          #Merges all the tables in the list.
 
                 -----------------data.table Package----------------
 
