@@ -85,6 +85,8 @@ Hmisc::cut2(x$"column", g = "how to break the data")       #Same as cut but from
 
 factor(x$"column", ...)     #To create factor variables. Arguments are to define how to create the factors.
 
+readr::parse_number(x)      #It eliminates characters from a variable. i.e. class5 -> 5
+
                   ------------XML files---------------
 
 xmlTreeParse(x,useInternal=TRUE)            #To extract XML files. Requires the XML Library.
@@ -161,7 +163,7 @@ summarize()     #Turns a dataframe in only 1 row.
 group_by()      #Turns a dataframe into groups depending on specific conditions.
 is.na()         #Filters NA values.
 na.omit()       #Erase NA rows.
-mutate()        #Add new columns to a dataframe. It can be used to do operations using the column data.
+mutate(dataframe, newcolumnname = values)        #Add new columns to a dataframe. It can be used to do operations using the column data.
 count()         #Counts data.
 %>%             #For pipelines.
 arrange(x, variable)        #Sorting data using a variable (ascending order). Argument desc(var) can be used to do it in descending order.
@@ -198,6 +200,14 @@ unlist(x)     #To get a vector for data manipulation.
 
 #The same can be done using plyr Package:
 plyr::ddply(x,.(targetcolumn),summarize,sum=sum(columntosum))
+  
+                ----------------tidyr Package-----------------
+
+gather(data,key,value,-correctcolumn)            #Organize a messy table (data) by selecting the variables and indicating the columns to conserve (-correctcolumn). key and value indicates the columns names for the tidy
+                                                 #dataset.
+
+separate(data,col,into=c("new column 1","new column 2"))       #Separates the data from 1 column into 2 columns. The arugment sep is needed when there is no clear way to identify the data in the column.
+spread(data,key = "column A", value = "column B")              #Organizes information that is fused in the same column.
   
                 ---------------------------------------------------
 
