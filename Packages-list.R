@@ -39,3 +39,7 @@ library(tuneR, seewave)  #For MP3 (sound/music) files.
 library(sqldf)  #Run SQL statements on R dataframes.
 
 library(reshape2)     #For data frame manipulation.
+
+library(tidyr)  #To get tidy data.
+
+library(readr)  #To get tidy data.
