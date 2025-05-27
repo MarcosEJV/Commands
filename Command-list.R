@@ -171,6 +171,9 @@ rbind(x, data)  #Binds new rows to the data frame, you can choose to add them at
 Hmisc::mutate(x, "newcolumn" 0 cut2 (column, g = y))            #Create a new variable and add it to the dataset. It needs Package Hmisc.
 rename(dataframe, ...)      #Changes the name of a column.
 arrange(join(x,y),column)   #Data frames merge using a column as a reference. The arrange command organize the final data frame.
+n_distinct(column)          #Identifies the different values in the column. Similar to using the nrow(unique(x())) command.
+n(column)                   #It gives you the group size.
+View(x)         #To print all the content in a data frame.
 
 dataList = list(x,y,z)      #Creates a list of data frames and assigns it to a variable.
 join_all(dataList)          #Merges all the tables in the list.
