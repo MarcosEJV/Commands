@@ -172,7 +172,7 @@ cbind(x, data)  #Binds new columns to the right of the data frame.
 rbind(x, data)  #Binds new rows to the data frame, you can choose to add them at the top or bottom by using arguments.
 Hmisc::mutate(x, "newcolumn" 0 cut2 (column, g = y))            #Create a new variable and add it to the dataset. It needs Package Hmisc.
 rename(dataframe, ...)      #Changes the name of a column.
-arrange(join(x,y),column)   #Data frames merge using a column as a reference. The arrange command organize the final data frame.
+arrange(dataframe$column, decreasing = FALSE)    #The arrange command organize the data frame based on a column.
 n_distinct(column)          #Identifies the different values in the column. Similar to using the nrow(unique(x())) command.
 n(column)                   #It gives you the group size.
 View(x)         #To print all the content in a data frame.
@@ -187,7 +187,8 @@ x[]             #Subsetting tables.
 x[,function()]  #Perform function to specific columns and variables in the table.
 x[,title:"new information"]   #Adding columns to an existing table. You can use formulas using other columns. You can also use logic tests.
 x[, .N, by=y]   #.N is a special variable that counts the number of times a value or variable appears in a table.
-fread(file)     #Fast reading tables. Much faster than read.table().
+fread(fileorurl, skip = n, nrows = n2, select = c(n3:n4), col.names = c("names"))     #Fast reading tables. Much faster than read.table(x).
+            #In addition, you can skip rows, select how manu rows to read, select columns and rename them.
 
                 ----------------reshape2 Package-------------------
 
