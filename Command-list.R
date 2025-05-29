@@ -280,6 +280,24 @@ plot(x, y, "type", main = "title", xlab = "x-axis", ylab = "y-axis", pch = numbe
 hist()          #Generates and histogram from a vector.
 boxplot()       #Bloxplot from a dataframe.
        
+       ---------------- For editing text --------------------
+
+tolower(names(x))            #Gets rid of capital letters in column names.
+strsplit(names(x), "\\.")    #Eliminates periods in column names and replaces them with spaces.
+sub("_", "", names(x),)      #Removes underscores in column names (only the first one).
+gsub("_", "", names(x),)     #Removes all underscores in column names.
+grep("text", x$column)       #Looks for a string or variable in a column and return its value.
+grepl("text", x$column, value = TRUE)      #Returns a logical vector. The argument value returns the value where the string appears in the column. It can be used to subset data as follows:
+       y <- x[!grepl("ejemplo", x$column),]
+
+#Using Package stringr:
+
+nchar(x)        #Number fo characters.
+substr("text", n, n2)        #Substracts the content of a string from n to n2.
+paste("x", "y", sep = " ")   #Prints 2 strings together (x y). sep is used to select the separation for the strings.
+paste0("x", "y")             #Similar to paste() but it does not add any character between the strings (xy).
+str_trim("x    ")            #Erase spaces at the end of strings.
+              
        ----------------- For debugging ---------------------
 
 traceback()     #Prints out the function call stack after an error.
