@@ -43,3 +43,5 @@ library(reshape2)     #For data frame manipulation.
 library(tidyr)  #To get tidy data.
 
 library(readr)  #To get tidy data.
+
+library(stringr)      #For text editing.
