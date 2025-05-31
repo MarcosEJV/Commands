@@ -45,3 +45,5 @@ library(tidyr)  #To get tidy data.
 library(readr)  #To get tidy data.
 
 library(stringr)      #For text editing.
+
+library(lubridate)    #For date manipulation.
