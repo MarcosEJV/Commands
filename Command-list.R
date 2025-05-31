@@ -21,6 +21,8 @@ round(number,decimals)  #Round a number, adding decimals acording to the indicat
 c(data)         #This generates vectors.
 "dataframename"[x,y]  #To see the data in a specific cell of a dataframe.
 "dataframename"[,c(1,3)]  #All rows, just column 1 and 3 of a dataframe.
+search()        #Shows the search list R is using to assing values to variables and functions.
+ls(environment())   #It tells you what is inside a function environment.
 
 Dataframe[Dataframe$Column|Condition]   #Gives you the specific data of a column- 
                                         #that complies with specific conditions.
@@ -210,12 +212,11 @@ gather(data,key,value,-correctcolumn)            #Organize a messy table (data) 
 separate(data,col,into=c("new column 1","new column 2"))       #Separates the data from 1 column into 2 columns. The arugment sep is needed when there is no clear way to identify the data in the column.
 spread(data,key = "column A", value = "column B")              #Organizes information that is fused in the same column.
   
-                ---------------------------------------------------
+                ------------------For dates-------------------
 
-search()        #Shows the search list R is using to assing values to variables and functions.
-ls(environment())   #It tells you what is inside a function environment.
 as.Date("date")       #Function for coercing date as a character as follows:
-
+as.Date(x, "%d%b%Y")  #It indicates that day, month and year should be taken from a string.
+  
 x <- as.Date("1989-07-14")
 unclass(x)
 
@@ -229,6 +230,23 @@ strptime(datestring, "%B %d, %y %H:%M")   #Function to acquire the time from dif
         #B-month d-day y-year in 4 digits H-hour m-minute
 
 as.POSIXct("date", tz = "EST")  #To manipulate time zone data. tz = time zone.
+
+#Using lubridate Package:
+
+ymd("yyyy-mm-dd", tz = "")               #Converts a string in date class. It can change the timezone.
+myd("mm-yyyy-dd", tz = "")               #Converts a string in date class. It can change the timezone.
+dmy("dd-mm-yyyy", tz = "")               #Converts a string in date class. It can change the timezone.
+ymd_hms("yyyy-mm-dd hh:mm:ss", tz = "")  #As previous but using also time. It can change the timezone.
+wday(x[1], label = FALSE)       #Gets the number of the weekday. If label is TRUE, it returns the weekday name.
+now(tzone = "") #It shows the current system date as yyyy-mm-dd and it can convert it to other time zone.
+today()         #It shows the current system date as yyyy-mm-dd
+update(datevariable, hours = n, minutes = n1, seconds = n2)   #It updates a time variable.
+with_tz(datevariable, tzone = "")        #Changes the time zone.
+interval(start = "date", end = "date", tz = "")   #To measure time intervals. tz argument can change time zones.
+stopwatch()     #Timer
+  
+              -------------------------------------------------------
+  
 x != y          #Logical operator that tests if two values are not equal.
 &               #"And" operator. If one is FALSE, everything is FALSE.
   
