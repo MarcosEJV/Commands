@@ -297,7 +297,7 @@ sample()        #Draw random samples from objects. if replace = TRUE -> the pick
 plot(x, y, "type", main = "title", xlab = "x-axis", ylab = "y-axis", pch = number)            #type -> white dots are default, "l" is a line chart. pch = 16 for black circles. For more, look into ?plot.
 hist(x, col="color", breaks=int)          #Generates an histogram from a vector. The breaks argument determines the number of breaks used to build the graph.
 barplot(x, col="color", main="title")     #Generates a barplot from a dataframe.
-boxplot(x, col="color")       #Bloxplot from a dataframe.
+boxplot(variable1~variable2, dataframe, xlab = "label for x", ylab = "label for y", col.axis = "color for axis labels", col.lab = "color for axis titles", col="color")       #Bloxplot from a dataframe.
        #Arguments:
        pch #Plotting symbols for each point.
        lty #Type of line.
@@ -310,6 +310,8 @@ par(modifier=value)           #Global graphic parameter modifier:
        bg  #Background color.
        mar #Margin size.
        oma #Outer margin size.
+dev.off    #or ~
+plot.new   #Reset par modifers to defaults.
 #Base ploting functions:
        plot()                 #Makes scatterplot.
        lines()                #Adds lines given vector values.
