@@ -4,7 +4,9 @@ library(plyr)   #Data manipulation.
 
 library(dplyr)  #Same as plyr but it allows pipeline use. %>%
 
-library(ggplot2)    #For figure generation.
+library(lattice)    #For figure creation. Creates lattice plots.
+
+library(ggplot2)    #For figure creation. Combines base and lattice formating.
 
 library(Markdown)   #For Markdowns.
 
