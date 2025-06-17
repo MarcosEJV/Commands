@@ -322,6 +322,14 @@ par(modifier=value)           #Global graphic parameter modifier:
        legend("placeinthegraph", "text to add")             #Similar to text()
 with(data, plot(variable1, variable2, col = variable3)      #Builds scatterplots.
        
+         ----------------- lattice package -----------------
+
+xyplot(variable1~variable2, data, layout = c(4,1))          #Builds a scatterplot comparing 2 variables from the data and it builds 4 graphs in one row side by side.
+
+         ----------------- ggplot2 package -----------------
+
+qplot(variable1, variable2, data = dataframe)          #Builds a scatterplot from a dataframe.
+     
        ---------------- For editing text --------------------
 
 tolower(names(x))            #Gets rid of capital letters in column names.
