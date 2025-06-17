@@ -292,11 +292,35 @@ qnorm()         #Quantile function. q from quantile.
 set.seed()      #Random number seed. This function allows reproducibility when generating numbers.
 sample()        #Draw random samples from objects. if replace = TRUE -> the picked valued can be repeated.
 
-       ----------------- For plotting (basic) ------------------
+       ----------------- For plotting (base) ------------------
 
 plot(x, y, "type", main = "title", xlab = "x-axis", ylab = "y-axis", pch = number)            #type -> white dots are default, "l" is a line chart. pch = 16 for black circles. For more, look into ?plot.
-hist()          #Generates and histogram from a vector.
-boxplot()       #Bloxplot from a dataframe.
+hist(x, col="color", breaks=int)          #Generates an histogram from a vector. The breaks argument determines the number of breaks used to build the graph.
+barplot(x, col="color", main="title")     #Generates a barplot from a dataframe.
+boxplot(x, col="color")       #Bloxplot from a dataframe.
+       #Arguments:
+       pch #Plotting symbols for each point.
+       lty #Type of line.
+       lwd #Line width.
+       col #Color -> colors() shows the color names as a vector.
+example(points)               #It shows all the points that can be use in the pch argument.
+par(modifier=value)           #Global graphic parameter modifier:
+       #Arguments:
+       las #Labels orientation.
+       bg  #Background color.
+       mar #Margin size.
+       oma #Outer margin size.
+#Base ploting functions:
+       plot()                 #Makes scatterplot.
+       lines()                #Adds lines given vector values.
+       points()               #Adds points.
+       text("placeinthegraph", "text to add")               #Adds labels using specific coordinates.
+       title("")              #Annotations
+       mtext("")              #Arbitrary text to margins.
+       axis()                 #Adds axis ticks/labels.
+       lm(x~y)                #Builds a linear model with the data.
+       legend("placeinthegraph", "text to add")             #Similar to text()
+with(data, plot(variable1, variable2, col = variable3)      #Builds scatterplots.
        
        ---------------- For editing text --------------------
 
