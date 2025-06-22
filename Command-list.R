@@ -326,11 +326,20 @@ with(data, plot(variable1, variable2, col = variable3)      #Builds scatterplots
        
          ----------------- lattice package -----------------
 
-xyplot(variable1~variable2, data, layout = c(4,1))          #Builds a scatterplot comparing 2 variables from the data and it builds 4 graphs in one row side by side.
+xyplot(variable1 ~ variable2 | f * g, data, layout = c(4,1))          #Builds a scatterplot comparing 2 variables from the data, and it builds 4 graphs in one row side by side. f and g are categorical variables.
+bwplot()            #For box and whiskers plots (boxplots)
+histogram()
+stripplot()         #For boxplot with points
+dotplot()           #Plots dots on "violin strings"
+splom()             #Scatterplot matrix
+levelplot() & contourplot()  #For plotting "image" data
 
          ----------------- ggplot2 package -----------------
 
-qplot(variable1, variable2, data = dataframe)          #Builds a scatterplot from a dataframe.
+qplot(variable1, variable2, data = dataframe, color = variable, geom = statistics, facets = .~variable)          #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable.
+                                                                                                                 #geom adds lines and statistics. facets allows multiplotting similar to mfrow or mfcol from plot()
+
+     ggplot(data, aes(x, y)) + geom_point()       #Plots data using ggplot() function. There is no plot until you call geom_point(), which is for scatterplots.
      
        ---------------- For editing text --------------------
 
