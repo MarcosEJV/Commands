@@ -339,7 +339,7 @@ levelplot() & contourplot()  #For plotting "image" data
 qplot(variable1, variable2, data = dataframe, color = variable, geom = statistics, facets = .~variable)          #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable.
                                                                                                                  #geom adds lines and statistics. facets allows multiplotting similar to mfrow or mfcol from plot()
 
-     ggplot(data, aes(x, y)) + geom_point()       #Plots data using ggplot() function. There is no plot until you call geom_point(), which is for scatterplots.
+ggplot(data, aes(x, y)) + geom_point()       #Plots data using ggplot() function. There is no plot until you call geom_point(), which is for scatterplots.
      
        ---------------- For editing text --------------------
 
