@@ -326,7 +326,11 @@ with(data, plot(variable1, variable2, col = variable3)      #Builds scatterplots
        
          ----------------- lattice package -----------------
 
-xyplot(variable1 ~ variable2 | f * g, data, layout = c(4,1))          #Builds a scatterplot comparing 2 variables from the data, and it builds 4 graphs in one row side by side. f and g are categorical variables.
+xyplot(variable1 ~ variable2 | f * g, data, strip = TRUE, pch = n, xlab = "xlabel", ylab = "ylabel", main = "main title", layout = c(4,1))          #Builds a scatterplot comparing 2 variables from the data, 
+                                                                                                                                                    #and it builds 4 graphs in one row side by side. f and g are 
+                                                                                                                                                    #categorical variables to organize the datapoints. strip adds 
+                                                                                                                                                    #title to each subplot.
+
 bwplot()            #For box and whiskers plots (boxplots)
 histogram()
 stripplot()         #For boxplot with points
