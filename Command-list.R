@@ -340,10 +340,24 @@ levelplot() & contourplot()  #For plotting "image" data
 
          ----------------- ggplot2 package -----------------
 
-qplot(variable1, variable2, data = dataframe, color = variable, geom = statistics, facets = .~variable)          #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable.
+qplot(variable1, variable2, data = dataframe, color = variable, geom = statistics, facets = .~variable)          #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable
                                                                                                                  #geom adds lines and statistics. facets allows multiplotting similar to mfrow or mfcol from plot()
 
-ggplot(data, aes(x, y)) + geom_point()       #Plots data using ggplot() function. There is no plot until you call geom_point(), which is for scatterplots.
+ggplot(data, aes(x, y))      #Plots data using ggplot() function
+
++ geom_point(color = "color", size = n, alpha = n/m, labs(title = "title"), labs(x = "text"), labs(y = "text"))  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
+                                                                                                                 #alpha defines transparency of points
+
++ geom_line()         #For lineplot
++ geom_plot(aes(color = variable))           #Defines dot colors by a variable
++ geom_smooth(size = n, linetype = n, method = "lm")    #Smooths the lines to see trends
++ facet_grid(.~ variable)    #Layout the plots according to a variable
++ facet_wrap(variable1 ~ variable2, nrow = n, ncol = n1)    #To organize plot panels
++ xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs()
++ theme_gray()        #The default gray background
++ theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot
++ coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range
+
      
        ---------------- For editing text --------------------
 
