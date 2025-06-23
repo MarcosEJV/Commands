@@ -8,7 +8,7 @@ data.frame( column1 = c(x,y,z),    #Generates a dataframe
             column3 = c(1,2,3)
             row.names = c(a,b,c)   #This adds names to each row in an extra column.
 )
-tbl_df(x)       #Converts a dataframe in a table-dataframe. Which is more organized and better for data manipulation.
+tbl_df(x)       #Converts a dataframe in a table-dataframe. Which is more organized and better for data manipulation. It is included in the dplyr Package
 
 matrix(c(1:10),    #Generates a matrix
        nrow = 2,
@@ -71,12 +71,8 @@ ftable(x)       #Summarizes cross tabs for easy analysis.
 object.size(x)  #To know the size of the data.
 merge(x,y,by.x="column",by.y="column",all=TRUE)             #Merges the data frames x and y, using the shared column as a reference.
 
-write.table("table","table.txt",quote = FALSE, sep = "\t")  #Saves a table as text file
-#the quote eliminates quotation marks.
-#sep argument indicates separation using tabulation.
-
+write.table("table","table.txt",quote = FALSE, sep = "\t")  #Saves a table as text file. The quote eliminates quotation marks. sep argument indicates separation using tabulation.
 write.xlsx()    #Write an Excel. Requires Library xlsx.
-
 sort(x&"column", decreasing = FALSE, na.last = TRUE)       #It sorts the value of a table using a column as a reference and in an ascending order. You can chose to do it in a descending order and to exclude NAs.
 order(x&"column", x&"column2")           #Reorder the data using a specific column as a reference. If there are repeated values, the column 2 is used to resolve ties.
 
@@ -88,6 +84,16 @@ Hmisc::cut2(x$"column", g = "how to break the data")       #Same as cut but from
 factor(x$"column", ...)     #To create factor variables. Arguments are to define how to create the factors.
 
 readr::parse_number(x)      #It eliminates characters from a variable. i.e. class5 -> 5
+
+color()         #Prints a list with the 657 colors available in R
+colorRamp(c("color1", "color2"))     #Creates functions that defines a color palette that goes from color1 to color2 using the RGB system: [Red][Green][Blue]
+
+colorRampPalette(("color1", "color2"))   #Similar to colorRamp(), but uses a 6-hexadecimal output with a range form 0 to F similar to Photoshop colors: i.e. #FF0000 for the first color in the Palette.
+                                         #It still follows the RGB palette
+
+rgb(red, green, blue, alpha = TRUE)  #Defines color. The alpha argument defines transparency and it goes from 0 to 1, also it can be FALSE or TRUE
+RColorBrewer::brewer.pal(n,"color palette") #Creates color palettes using the colors available in the RColorBrewer package
+
 
                   ------------XML files---------------
 
