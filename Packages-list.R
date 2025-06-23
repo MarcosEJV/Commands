@@ -49,3 +49,5 @@ library(readr)  #To get tidy data.
 library(stringr)      #For text editing.
 
 library(lubridate)    #For date manipulation.
+
+library(RColorBrewer) #For color palettes.
