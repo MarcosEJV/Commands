@@ -346,8 +346,9 @@ levelplot() & contourplot()  #For plotting "image" data
 
          ----------------- ggplot2 package -----------------
 
-qplot(variable1, variable2, data = dataframe, color = variable, geom = statistics, facets = .~variable)          #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable
-                                                                                                                 #geom adds lines and statistics. facets allows multiplotting similar to mfrow or mfcol from plot()
+qplot(variable1, variable2, data = dataframe, fill = variable, color = variable, geom = statistics, facets = .~variable, binwidth = n)          
+            #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable. fill is going to color the boxes/histogram according to a variable.
+            #geom adds lines, allows you to choose the plot type, and statistics. facets allows multiplotting similar to mfrow or mfcol from plot(). bindwidth defines the box size breaks.
 
 ggplot(data, aes(x, y))      #Plots data using ggplot() function
 
