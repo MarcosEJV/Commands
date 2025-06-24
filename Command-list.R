@@ -337,12 +337,12 @@ xyplot(variable1 ~ variable2 | f * g, data, strip = TRUE, pch = n, xlab = "xlabe
                                                                                                                                                     #categorical variables to organize the datapoints. strip adds 
                                                                                                                                                     #title to each subplot.
 
-bwplot()            #For box and whiskers plots (boxplots)
+bwplot()            #For box and whiskers plots (boxplots).
 histogram()
-stripplot()         #For boxplot with points
-dotplot()           #Plots dots on "violin strings"
-splom()             #Scatterplot matrix
-levelplot() & contourplot()  #For plotting "image" data
+stripplot()         #For boxplot with points.
+dotplot()           #Plots dots on "violin strings".
+splom()             #Scatterplot matrix.
+levelplot() & contourplot()  #For plotting "image" data.
 
          ----------------- ggplot2 package -----------------
 
@@ -352,19 +352,20 @@ qplot(variable1, variable2, data = dataframe, fill = variable, color = variable,
 
 ggplot(data, aes(x, y))      #Plots data using ggplot() function
 
-+ geom_point(color = "color", size = n, alpha = n/m, labs(title = "title"), labs(x = "text"), labs(y = "text"))  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
-                                                                                                                 #alpha defines transparency of points
+  + geom_point(color = "color", size = n, alpha = n/m, labs(title = "title", x = "text", y = "text"), aes())  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
+                                                                                                            #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
-+ geom_line()         #For lineplot
-+ geom_plot(aes(color = variable))           #Defines dot colors by a variable
-+ geom_smooth(size = n, linetype = n, method = "lm")    #Smooths the lines to see trends
-+ facet_grid(.~ variable)    #Layout the plots according to a variable
-+ facet_wrap(variable1 ~ variable2, nrow = n, ncol = n1)    #To organize plot panels
-+ xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs()
-+ theme_gray()        #The default gray background
-+ theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot
-+ coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range
-
+  + geom_line()         #For lineplot.
+  + geom_plot(aes(color = variable))           #Defines dot colors by a variable.
+  + geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
+  + facet_grid(.~ variable, margin = TRUE)    #Layout the plots according to a variable. margin shows a summary plot at the end of each row and column.
+  + facet_wrap(variable1 ~ variable2, nrow = n, ncol = n1)    #To organize plot panels.
+  + xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs().
+  + theme_gray()        #The default gray background.
+  + theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot.
+  + coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
+  + ggtitle("Plot title")      #Adds a title to the plot.
+  + ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
      
        ---------------- For editing text --------------------
 
