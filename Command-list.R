@@ -27,7 +27,7 @@ ls(environment())   #It tells you what is inside a function environment.
 Dataframe[Dataframe$Column|Condition]   #Gives you the specific data of a column- 
                                         #that complies with specific conditions.
 
-summary()   #Shows a summary of a table.
+summary()   #Shows a summary of a table and a plot inside a variable (for ggplot()).
 dim()       #To look at the structure of a dataframe. The output is the number of rows and columns.
 abs()       #Absolute value.
 sqrt()      #Square root.
@@ -58,6 +58,7 @@ head("table")   #Print first row. 6 rows is the standard.
 tail("table")   #Print last row. 6 rows is the standard.
 nrow("table")   #Count number of rows.
 str("table")           #Internal structure of an R object. Simillar to summary().
+range(table$variable)  #Prints the minimum and maximum values of a specific variable.
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
 table("dataframe"$Column)   #To know how many times each value actually occurs.
@@ -346,9 +347,10 @@ levelplot() & contourplot()  #For plotting "image" data.
 
          ----------------- ggplot2 package -----------------
 
-qplot(variable1, variable2, data = dataframe, fill = variable, color = variable, geom = statistics, facets = .~variable, binwidth = n)          
+qplot(variable1, variable2, data = dataframe, fill = variable, color = variable, geom = statistics, facets = .~variable, binwidth = n, fill = variable, shape = variable)          
             #Builds a scatterplot from a dataframe. Color assigns a color to dots based on a variable. fill is going to color the boxes/histogram according to a variable.
             #geom adds lines, allows you to choose the plot type, and statistics. facets allows multiplotting similar to mfrow or mfcol from plot(). bindwidth defines the box size breaks.
+            #fill is going to color the columns according to the data in the target variable when working with histograms (only plotting 1 variable). shape does the same but in scatterplots.
 
 ggplot(data, aes(x, y))      #Plots data using ggplot() function
 
@@ -356,6 +358,7 @@ ggplot(data, aes(x, y))      #Plots data using ggplot() function
                                                                                                             #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
   + geom_line()         #For lineplot.
+  + geom_boxplot()      #For boxplots.
   + geom_plot(aes(color = variable))           #Defines dot colors by a variable.
   + geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
   + facet_grid(.~ variable, margin = TRUE)    #Layout the plots according to a variable. margin shows a summary plot at the end of each row and column.
