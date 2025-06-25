@@ -338,12 +338,14 @@ xyplot(variable1 ~ variable2 | f * g, data, strip = TRUE, pch = n, xlab = "xlabe
                                                                                                                                                     #categorical variables to organize the datapoints. strip adds 
                                                                                                                                                     #title to each subplot.
 
+panel.abline()      #Adds reference lines to lattice plots.
 bwplot()            #For box and whiskers plots (boxplots).
 histogram()
 stripplot()         #For boxplot with points.
 dotplot()           #Plots dots on "violin strings".
 splom()             #Scatterplot matrix.
 levelplot() & contourplot()  #For plotting "image" data.
+trellis.par.set()   #To personalize lattice plots propierties, similar to par() for the base plot system.
 
          ----------------- ggplot2 package -----------------
 
