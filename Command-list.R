@@ -289,7 +289,7 @@ dir.create("x")             #Creates a directory in the current working director
 download.file(websiteinvariable, destfile = "directoryofdestination/filename.extension", method = "curl")            #For downloading files from the internet, 
                                                                                                                      #the method argument is needed when downloading form https on a Mac
 
-       ----------------- Statistics -------------------
+       ----------------- Statistics and data comparison -------------------
 
 rnorm()         #Random numbers given a mean and STdev. r from random.
 dnorm()         #Normal probability (given mean and STdev) at a point (or vector of points). d from density.
@@ -298,7 +298,10 @@ rpois()         #Random Poisson variates with a given rate.
 qnorm()         #Quantile function. q from quantile.
 set.seed()      #Random number seed. This function allows reproducibility when generating numbers.
 sample()        #Draw random samples from objects. if replace = TRUE -> the picked valued can be repeated.
-
+dist(dataframe) #Calculates the distance between all the different rows in the table.
+hclust(dist(dataframe))    #Builds a dendogram using the distances form the dist() command. You have to use plot() to see the dendogram.
+heatmap(as.matric(dataframe)    #Runs a cluster analysis and displays it as a heatmap.
+       
        ----------------- For plotting (base) ------------------
 
 plot(x, y, "type", main = "title", xlab = "x-axis", ylab = "y-axis", pch = number)            #type -> white dots are default, "l" is a line chart. pch = 16 for black circles. For more, look into ?plot.
