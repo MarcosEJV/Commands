@@ -301,6 +301,8 @@ sample()        #Draw random samples from objects. if replace = TRUE -> the pick
 dist(dataframe) #Calculates the distance between all the different rows in the table.
 hclust(dist(dataframe))    #Builds a dendogram using the distances form the dist() command. You have to use plot() to see the dendogram.
 heatmap(as.matric(dataframe)    #Runs a cluster analysis and displays it as a heatmap.
+as.dendrogram(hclost(dist(dataframe))    #Fix the ploting data wto show everything at the same level when using the command plot().
+
        
        ----------------- For plotting (base) ------------------
 
