@@ -303,6 +303,10 @@ hclust(dist(dataframe))    #Builds a dendogram using the distances form the dist
 heatmap(as.matric(dataframe)    #Runs a cluster analysis and displays it as a heatmap.
 as.dendrogram(hclost(dist(dataframe))    #Fix the ploting data wto show everything at the same level when using the command plot().
 
+#K-Means Clustering:
+kmeans(dataframe, centers = n, iter.max = n1, nstart =n2)  #Returns a list with elements. The cluster element shows the clustered assigned to the data. This can be plotted later with plot(x,y,col=clusters) or heatmap(). 
+                                                           #centers are picked by intuition. iter.max defines the number of iterations to define the clusters. nstart defines the number of random starts to try.
+
        
        ----------------- For plotting (base) ------------------
 
