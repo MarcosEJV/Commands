@@ -258,10 +258,10 @@ x != y          #Logical operator that tests if two values are not equal.
 &               #"And" operator. If one is FALSE, everything is FALSE.
   
 &&              #"And-and" operator, it evaluates only the corresponding values 1v1.
-  
                 #Or operators | and || work the same way. If one is TRUE, everything is TRUE.
-  
                 #"And" operators are evaluated before "or" operators.
+
+%*%             #Multiplication in R.
   
 argument1 %in% argument2  #Logical binary operator that will look for the information from argument 1 inside argument 2.
 
@@ -297,15 +297,19 @@ pnorm()         #Cumulative distribution function for a Normal distribution. p f
 rpois()         #Random Poisson variates with a given rate.
 qnorm()         #Quantile function. q from quantile.
 set.seed()      #Random number seed. This function allows reproducibility when generating numbers.
-sample()        #Draw random samples from objects. if replace = TRUE -> the picked valued can be repeated.
+sample(x, replace = TRUE)       #Draw random samples from objects. If replace = TRUE -> the picked value can be repeated.
 dist(dataframe) #Calculates the distance between all the different rows in the table.
-hclust(dist(dataframe))    #Builds a dendogram using the distances form the dist() command. You have to use plot() to see the dendogram.
+hclust(dist(dataframe))    #Builds a dendogram using the distances form the dist() command. You have to use plot() to see the dendrogram.
 heatmap(as.matric(dataframe)    #Runs a cluster analysis and displays it as a heatmap.
 as.dendrogram(hclost(dist(dataframe))    #Fix the ploting data wto show everything at the same level when using the command plot().
 
 #K-Means Clustering:
 kmeans(dataframe, centers = n, iter.max = n1, nstart =n2)  #Returns a list with elements. The cluster element shows the clustered assigned to the data. This can be plotted later with plot(x,y,col=clusters) or heatmap(). 
                                                            #centers are picked by intuition. iter.max defines the number of iterations to define the clusters. nstart defines the number of random starts to try.
+
+svd(data, ...)             #Computes the singular-value decomposition of a rectangular matrix. Express a matrix X of observations (rows) and variables (columns) as the product of 3 other matrices.
+impute::impute.knn(data)$column    #Assigns a value to a row with a missing value based on the other rows. Package impute is required for this command.
+scale(data)     #subtract the column mean from every element and divide the result by the column standard deviation.
 
        
        ----------------- For plotting (base) ------------------
