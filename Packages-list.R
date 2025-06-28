@@ -51,3 +51,5 @@ library(stringr)      #For text editing.
 library(lubridate)    #For date manipulation.
 
 library(RColorBrewer) #For color palettes.
+
+library(impute) #To work with PCA and SVD data analysis.
