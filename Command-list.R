@@ -84,17 +84,19 @@ Hmisc::cut2(x$"column", g = "how to break the data")       #Same as cut but from
 
 factor(x$"column", ...)     #To create factor variables. Arguments are to define how to create the factors.
 
-readr::parse_number(x)      #It eliminates characters from a variable. i.e. class5 -> 5
+readr::parse_number(x)      #It eliminates characters from a variable. i.e. class5 -> 5.
 
-color()         #Prints a list with the 657 colors available in R
-colorRamp(c("color1", "color2"))     #Creates functions that defines a color palette that goes from color1 to color2 using the RGB system: [Red][Green][Blue]
+color()         #Prints a list with the 657 colors available in R.
+colorRamp(c("color1", "color2"))     #Creates functions that defines a color palette that goes from color1 to color2 using the RGB system: [Red][Green][Blue].
 
 colorRampPalette(("color1", "color2"))   #Similar to colorRamp(), but uses a 6-hexadecimal output with a range form 0 to F similar to Photoshop colors: i.e. #FF0000 for the first color in the Palette.
-                                         #It still follows the RGB palette
+                                         #It still follows the RGB palette.
 
-rgb(red, green, blue, alpha = TRUE)  #Defines color. The alpha argument defines transparency and it goes from 0 to 1, also it can be FALSE or TRUE
-RColorBrewer::brewer.pal(n,"color palette") #Creates color palettes using the colors available in the RColorBrewer package
-
+heat.colors()            #yellow-red palette.
+topo.colors()            #blue-green palette.
+rgb(red, green, blue, alpha = TRUE)  #Defines color. The alpha argument defines transparency and it goes from 0 to 1, also it can be FALSE or TRUE.
+RColorBrewer::brewer.pal(n,"color palette") #Creates color palettes using the colors available in the RColorBrewer package.
+smoothScatter(x, y)      #Creates a 2D histogram using the blues colors.
 
                   ------------XML files---------------
 
@@ -310,7 +312,6 @@ kmeans(dataframe, centers = n, iter.max = n1, nstart =n2)  #Returns a list with 
 svd(data, ...)             #Computes the singular-value decomposition of a rectangular matrix. Express a matrix X of observations (rows) and variables (columns) as the product of 3 other matrices.
 impute::impute.knn(data)$column    #Assigns a value to a row with a missing value based on the other rows. Package impute is required for this command.
 scale(data)     #subtract the column mean from every element and divide the result by the column standard deviation.
-
        
        ----------------- For plotting (base) ------------------
 
