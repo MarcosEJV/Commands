@@ -374,6 +374,7 @@ ggplot(data, aes(x, y))      #Plots data using ggplot() function
                                                                                                               #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
   + geom_line()         #For lineplot.
+  + geom_bar(mapping = aes(x, y), stat = "identity")       #Prints a barplot.
   + geom_boxplot()      #For boxplots.
   + geom_plot(aes(color = variable))           #Defines dot colors by a variable.
   + geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
@@ -385,6 +386,7 @@ ggplot(data, aes(x, y))      #Plots data using ggplot() function
   + coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
   + ggtitle("Plot title")      #Adds a title to the plot.
   + ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
+  + coord_cartesian(ylim = c(n,n1))         #Cuts the y-axis but still printing the data that is outside the plot. <- USE THIS INSTEAD OF ylim().
   + geom_hline(yintercept = method)         #Adds a line in the plot following a specified number or formula.
   + geom_errorbar(aes(ymin = n, ymax = n), position = position_dodge(width = n), width = n)   #Adds statistical error to the plot.
      
