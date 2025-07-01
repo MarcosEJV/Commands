@@ -371,7 +371,7 @@ qplot(variable1, variable2, data = dataframe, fill = variable, color = variable,
 ggplot(data, aes(x, y))      #Plots data using ggplot() function
 
   + geom_point(color = "color", size = n, alpha = n/m, labs(title = "title", x = "text", y = "text"), aes())  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
-                                                                                                            #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
+                                                                                                              #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
   + geom_line()         #For lineplot.
   + geom_boxplot()      #For boxplots.
@@ -385,6 +385,8 @@ ggplot(data, aes(x, y))      #Plots data using ggplot() function
   + coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
   + ggtitle("Plot title")      #Adds a title to the plot.
   + ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
+  + geom_hline(yintercept = method)         #Adds a line in the plot following a specified number or formula.
+  + geom_errorbar(aes(ymin = n, ymax = n), position = position_dodge(width = n), width = n)   #Adds statistical error to the plot.
      
        ---------------- For editing text --------------------
 
