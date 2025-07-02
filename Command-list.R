@@ -38,6 +38,7 @@ cos(x) sin(x)
 log(x)
 log2(x) log10()
 exp(x)
+intersect(vector1,vector2)    #It looks for repeated values between 2 vectors.
 
 If(argument){ event 1,    #Conditional for order execution.
   event 2}
@@ -54,11 +55,16 @@ read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet s
 read.xlsx()     #From library readxl, same as the previous one but you can use range = "firstcell:lastcell" to subset a range of cells (i.e. A3:C4).
 
 names("table")  #Print first column.
+
+names("table") <- make.names(namesvector[[1]][columnsvector])    #Changes the names in the columns of a table by replacing them with the names contained in a vector and using a numeric vector with the number of the 
+                                                                 #number of the name in the vector that will be used for the table.
+
 head("table")   #Print first row. 6 rows is the standard.
 tail("table")   #Print last row. 6 rows is the standard.
 nrow("table")   #Count number of rows.
 str("table")           #Internal structure of an R object. Simillar to summary().
 range(table$variable)  #Prints the minimum and maximum values of a specific variable.
+strsplit(variable, "separation mark", fixed = TRUE)    #Splits the content of a variable into a vector, The split is done by using a separation mark as a reference.
 
 "Table"[rowSums(countTable)>0,]   #Deletes rows without data.
 table("dataframe"$Column)   #To know how many times each value actually occurs.
@@ -281,8 +287,8 @@ apply(x,margin,function,...)         #Apply a function over the margins of an ar
 tapply(x, index, function,..., SIMPLIFY = TRUE)        #Apply a function over subsets of a vector. x is a vector. index is a factor or a list of factors.
 mapply(function,...,MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)        #Multivariate version of lapply().
 
-split(x,f, drop = FALSE,...)          #Takes a vector or other objects and splits it into groups determined by a factor or list of factors. x is a vector, list or dataframe. f is a factor. frop says if empty factors
-                                      #should be dropped.
+split(x, f, drop = FALSE,...)          #Takes a vector or other objects and splits it into groups determined by a factor or list of factors. x is a vector, list or dataframe. f is a factor. drop defines if empty factors
+                                       #should be dropped.
        
 date()          #It prints the date of the system.
 file.exists("x")            #It verifies the presence of a file in the working directory.
@@ -325,6 +331,8 @@ boxplot(variable1~variable2, dataframe, xlab = "label for x", ylab = "label for 
        lwd #Line width.
        col #Color -> colors() shows the color names as a vector.
 example(points)               #It shows all the points that can be use in the pch argument.
+abline(h = function(table$column, na.rm=TRUE), lwd = n)    #Adds a line in the plot that can be used to indicate median.
+segments(x0, y0, x1, y1)      #Draws a line from the first points (0) to the second points (1) in the dotplot.
 par(modifier=value)           #Global graphic parameter modifier:
        #Arguments:
        las #Labels orientation.
