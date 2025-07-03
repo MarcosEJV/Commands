@@ -53,6 +53,7 @@ variable <- read.table()  #Builds dataframes from table files. Arguments: sep = 
 read.csv()      #To read csv directly.
 read.xlsx()     #To read excel files. sheetIndex = num (To know what worksheet should be imported); header = TRUE (column titles); colIndex / rowIndex (to read specific columns or rows. Requires Library xlsx.
 read.xlsx()     #From library readxl, same as the previous one but you can use range = "firstcell:lastcell" to subset a range of cells (i.e. A3:C4).
+readRDS()       #To read tables contained in RDS objects.
 
 names("table")  #Print first column.
 
