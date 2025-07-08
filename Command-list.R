@@ -377,28 +377,28 @@ qplot(variable1, variable2, data = dataframe, fill = variable, color = variable,
             #geom adds lines, allows you to choose the plot type, and statistics. facets allows multiplotting similar to mfrow or mfcol from plot(). bindwidth defines the box size breaks.
             #fill is going to color the columns according to the data in the target variable when working with histograms (only plotting 1 variable). shape does the same but in scatterplots.
 
-ggplot(data, aes(x, y))      #Plots data using ggplot() function
+ggplot(data, aes(x, y)) +     #Plots data using ggplot() function. The + symbol always goes at the end of the line, NEVER AT THE START.
 
-  + geom_point(color = "color", size = n, alpha = n/m, labs(title = "title", x = "text", y = "text"), aes())  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
+  geom_point(color = "color", size = n, alpha = n/m, labs(title = "title", x = "text", y = "text"), aes())  #There is no plot until you call geom_point(), which is for scatterplots and has different options. 
                                                                                                               #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
-  + geom_line()         #For lineplot.
-  + geom_bar(mapping = aes(x, y), stat = "identity")       #Prints a barplot.
-  + geom_boxplot(aes(fill/color = variable))      #For boxplots.
-  + geom_plot(aes(color = variable))           #Defines dot colors by a variable.
-  + geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
-  + facet_grid(.~ variable, margin = TRUE)    #Layout the plots according to a variable. margin shows a summary plot at the end of each row and column.
-  + facet_wrap(variable1 ~ variable2, nrow = n, ncol = n1)    #To organize plot panels.
-  + xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs().
-  + theme_gray()        #The default gray background.
-  + theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot.
-  + coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
-  + ggtitle("Plot title")      #Adds a title to the plot.
-  + ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
-  + coord_cartesian(ylim = c(n,n1))         #Cuts the y-axis but still printing the data that is outside the plot. <- USE THIS INSTEAD OF ylim().
-  + geom_hline(yintercept = method)         #Adds a line in the plot following a specified number or formula.
-  + geom_errorbar(aes(ymin = n, ymax = n), position = position_dodge(width = n), width = n)   #Adds statistical error to the plot.
-  + scale_colour_manual("Legend title", breaks = c("line1","line2","etc."), values = c("color1","color2","etc."))    #Adds a legend to the plot. For this to work, the geom_line() (or what you are using for plotting), 
+  geom_line()         #For lineplot.
+  geom_bar(mapping = aes(x, y), stat = "identity")       #Prints a barplot.
+  geom_boxplot(aes(fill/color = variable))      #For boxplots.
+  geom_plot(aes(color = variable))           #Defines dot colors by a variable.
+  geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
+  facet_grid(.~ variable, margin = TRUE)    #Layout the plots according to a variable. margin shows a summary plot at the end of each row and column.
+  facet_wrap(variable1 ~ variable2, nrow = n, ncol = n1)    #To organize plot panels.
+  xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs().
+  theme_gray()        #The default gray background.
+  theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot.
+  coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
+  ggtitle("Plot title")      #Adds a title to the plot.
+  ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
+  coord_cartesian(ylim = c(n,n1))         #Cuts the y-axis but still printing the data that is outside the plot. <- USE THIS INSTEAD OF ylim().
+  geom_hline(yintercept = method)         #Adds a line in the plot following a specified number or formula.
+  geom_errorbar(aes(ymin = n, ymax = n), position = position_dodge(width = n), width = n)   #Adds statistical error to the plot.
+  scale_colour_manual("Legend title", breaks = c("line1","line2","etc."), values = c("color1","color2","etc."))    #Adds a legend to the plot. For this to work, the geom_line() (or what you are using for plotting), 
                                                                                                                      #should have the color argument with the same string as the break argument in this command.
      
 png("file.png", width = n, height = n, units= "px")    #Creates a png file that contains the plot.
