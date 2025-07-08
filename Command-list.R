@@ -398,7 +398,9 @@ ggplot(data, aes(x, y))      #Plots data using ggplot() function
   + coord_cartesian(ylim = c(n,n1))         #Cuts the y-axis but still printing the data that is outside the plot. <- USE THIS INSTEAD OF ylim().
   + geom_hline(yintercept = method)         #Adds a line in the plot following a specified number or formula.
   + geom_errorbar(aes(ymin = n, ymax = n), position = position_dodge(width = n), width = n)   #Adds statistical error to the plot.
-
+  + scale_colour_manual("Legend title", breaks = c("line1","line2","etc."), values = c("color1","color2","etc."))    #Adds a legend to the plot. For this to work, the geom_line() (or what you are using for plotting), 
+                                                                                                                     #should have the color argument with the same string as the break argument in this command.
+     
 png("file.png", width = n, height = n, units= "px")    #Creates a png file that contains the plot.
 dev.off()                                              #Closes the png file for visualization.
      
