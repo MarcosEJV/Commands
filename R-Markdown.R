@@ -28,8 +28,11 @@ output: pdf_document
 1. item 1
 2. item 2
 
-```{r "code"}  #To insert a command line in the text
-Code
-´´´    #Closes and executes the code
+```{r "code", echo = TRUE, results = "asis", fig.height = n, fig.width = n}  #To insert a command line in the text. echo defines if code is printed or only result, results defines if results should be printed, fig.size
+Code                                                                         #defines the size of the figure if there is one
+x <- anothercode
+```    #Closes and executes the code
+
+Este es un texto de prueba en el que quiero insertar la variable `r x` dentro del cuerpo del texto.    #`r variable` inserts a variable inside the text body
 
 #knitr, slidify and markdown Packages complement R markdown documents.
