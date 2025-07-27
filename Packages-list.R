@@ -56,7 +56,7 @@ library(impute) #To work with PCA and SVD data analysis.
 
 library(colorspace)   #Different color over colors.
 
-library(knitr)  #For literate statistical programming working with R Markdown.
+library(knitr)  #For literate statistical programming working with R Markdown. It is already installed in RStudio.
 
 library(slidify)      #Converts R Markdown into slides.
 
