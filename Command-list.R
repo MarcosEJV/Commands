@@ -385,6 +385,7 @@ ggplot(data, aes(x, y)) +     #Plots data using ggplot() function. The + symbol 
   geom_line()         #For lineplot.
   geom_bar(mapping = aes(x, y), stat = "identity")       #Prints a barplot.
   geom_boxplot(aes(fill/color = variable))      #For boxplots.
+  geom_jitter(position = position_jitter(width = 0.1), alpha = 1)   #Adds points to a boxplot.
   geom_plot(aes(color = variable))           #Defines dot colors by a variable.
   geom_smooth(size = n, linetype = n, method = "lm", se = TRUE/FALSE)    #Smooths the lines to see trends. se indicates standard error in the plot.
   facet_grid(.~ variable, margin = TRUE)    #Layout the plots according to a variable. margin shows a summary plot at the end of each row and column.
