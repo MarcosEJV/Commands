@@ -383,7 +383,7 @@ ggplot(data, aes(x, y)) +     #Plots data using ggplot() function. The + symbol 
                                                                                                               #alpha defines transparency of points. aes() allows you to play with the variables (color=variable).
 
   geom_line()         #For lineplot.
-  geom_bar(mapping = aes(x, y), stat = "identity")       #Prints a barplot.
+  geom_bar(mapping = aes(x, y), stat = "identity", position=position_dodge())    #Prints a barplot. Adding the position argument will separate bars and not give you one with all the information per sample.
   geom_boxplot(aes(fill/color = variable))      #For boxplots.
   geom_jitter(position = position_jitter(width = 0.1), alpha = 1)   #Adds points to a boxplot.
   geom_plot(aes(color = variable))           #Defines dot colors by a variable.
