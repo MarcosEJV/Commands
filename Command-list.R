@@ -393,7 +393,6 @@ ggplot(data, aes(x, y)) +     #Plots data using ggplot() function. The + symbol 
   xlab() / ylab() / labs(x = "title"/y = "title"/title = "title") / ggtitle()         #Modifies specific labels on the plot, only one of the arguments can be chose for labs().
   theme_gray()        #The default gray background.
   theme_bw(base_family = "Font", base_size = n)          #More stark/plain background. base_family is to chose the font use for the plot.
-  coord_cartesian(ylim = c(n,n1))         #It defines the y-axis range respecting all points in the plot.
   ggtitle("Plot title")      #Adds a title to the plot.
   ylim(n,n1)          #To delimitate the y-axis range cutting data from the plot.
   coord_cartesian(ylim = c(n,n1))         #Cuts the y-axis but still printing the data that is outside the plot. <- USE THIS INSTEAD OF ylim().
