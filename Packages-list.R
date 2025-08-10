@@ -61,3 +61,5 @@ library(knitr)  #For literate statistical programming working with R Markdown. I
 library(slidify)      #Converts R Markdown into slides.
 
 library(markdown)     #Converts R Markdown into standard markdown.
+
+library(cacher)       #Evaluates code in files and stores intermediate results for downstream evaluation.
